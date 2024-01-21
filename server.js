@@ -38,6 +38,7 @@ app.use(
     path.join(path.dirname(fileURLToPath(import.meta.url)), 'public')
   )
 )
+app.use(express.static('public'));
 
 // session middleware
 app.use(

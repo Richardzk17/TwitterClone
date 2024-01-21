@@ -1,16 +1,63 @@
 <%- include('./partials/html-head') %>
-<%- include('./partials/nav') %>
+<!-- <%- include('./partials/nav') %> -->
 
-<main>
-  <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
-  <% if (user?.profile.avatar) { %>
-    <div>
-      <img
-        src="<%= user.profile.avatar %>"
-        alt="<%= user.profile.name %> avatar"
-      />
-    </div>
+<body>
+  <div class="container">
+      <div class="content1">
+          <div class="text">
+          <p><img src="/image/magnifier.png" alt=""> Follow your interests.</p>
+          <p><img src="/image/" alt=""> Hear what people are talking about.</p>
+          <p><img src="/image/speech-bubble.png" alt=""> Join the conversation.</p>
+      </div>
+      </div>
+      <div class="content2">
+        <div class="text1">
+          <p><img src="/image/owl.png" alt="" width="42" height="42"></p>
+          <p style="font-size: 30px;"  style="font-weight: bold;">See what's happening in the world right now</p>
+          <p style="font-size: 12px;">Join Owl today.</p>
+      </div>
+        <% if (user) { %>
+          <a href="/auth/logout" class="right">
+            <button type="submit">Logout</button>
+          </a>
+          
+        <% } else { %>
+          <div 
+            id="g_id_onload"
+            data-client_id="<%= googleClientID %>"
+            data-login_uri="/auth/google"
+            data-auto_prompt="false"
+            data-prompt_parent_id="g_id_onload"
+          ></div>
+          <div 
+            class="g_id_signin right"
+            data-type="standard"
+            data-size="large"
+            data-theme="outline"
+            data-text="sign_in_with"
+            data-shape="rectangular"
+            data-logo_alignment="left"
+          ></div>
+        <% } %>
+      </div>
+  </div>
+  <main>
+    <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
+    <% if (user?.profile.avatar) { %>
+      <div>
+        <img
+          src="<%= user.profile.avatar %>"
+          alt="<%= user.profile.name %> avatar"
+        />
+      </div>
+    <% } %>
+  </main>  <% if (!user) { %>
+    <script defer src="https://accounts.google.com/gsi/client"></script>
   <% } %>
-</main>
+  </head>
+  <body>
+  
+</body>
+
 
 <%- include('./partials/footer') %>
