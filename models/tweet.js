@@ -10,9 +10,9 @@ const commentSchema = new Schema({
   })
 
 const tweetSchema = new Schema({
-    author: {type: Schema.Types.ObjectId, ref: 'Profile'},
+    owner: {type: Schema.Types.ObjectId, ref: 'Profile'},
     date: Date,
-    content: [commentSchema]
+    comments: [commentSchema]
 }, {
   timestamps: true,
 })

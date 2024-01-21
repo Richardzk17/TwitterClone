@@ -4,14 +4,14 @@
     <body>
         <div class="container2">
             <div class="content3">
-                <p> <img src="/image/owl.png" alt="" width="42" height="42"></p>
+                <p> <img src="image/owl.png" alt="" width="42" height="42"></p>
             </div>
             <div class="content4">
                 <input class="textbox" value="tweet" type="text">
                 <h2>Comments</h2>
                 <% if (user) { %>
                     <h3>Add a comment</h3>
-                    <form action="/tweets/<%= tweet._id %>content" method="POST">
+                    <form action="/tweets/<%= tweets._id %>comments" method="POST">
                         <textarea name="content"></textarea><br>
                         <button type="submit">Add Comment</button>
                     </form>
@@ -20,5 +20,5 @@
             </div>
             <div class="content5"></div>
         </div>
-
+        
     </body>
