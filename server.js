@@ -23,8 +23,6 @@ import { router as indexRouter } from './routes/index.js'
 import { router as authRouter } from './routes/auth.js'
 import { router as tweetsRouter } from './routes/tweets.js'
 
-
-
 // create the express app
 const app = express()
 

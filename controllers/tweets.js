@@ -74,10 +74,9 @@ function update(req, res) {
   Tweet.findById(req.params.tweetId)
   .then(tweet => {
     if (tweet.owner.equals(req.user.profile._id)) {
-      req.body.tasty = !!req.body.tasty
-      taco.updateOne(req.body)
+      tweet.updateOne(req.body)
       .then(() => {
-        res.redirect(`/tacos/${taco._id}`)
+        res.redirect(`/tweets/${tweet._id}`)
       })
     } else {
       throw new Error('🚫 Not authorized 🚫')
@@ -89,9 +88,44 @@ function update(req, res) {
   })
 }
 
+function edit(req, res) {
+  Tweet.findById(req.params.tweetId)
+  .then(tweet => {
+    res.render('tweets/edit', {
+      tweet,
+      title: "edit 🌮"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/tweet")
+  })
+}
+
+function deleteTweet(req, res) {
+  Tweet.findById(req.params.tweetId)
+  .then(tweet => {
+    if (tweet.owner.equals(req.user.profile._id)) {
+      tweet.deleteOne()
+      .then(() => {
+        res.redirect('/tweets')
+      })
+    } else {
+      throw new Error ('🚫 Not authorized 🚫')
+    }   
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/tweets')
+  })
+}
+
 export {
   index,
   addComment,
   show,
-  create
+  create,
+  update,
+  edit,
+  deleteTweet as delete
 }

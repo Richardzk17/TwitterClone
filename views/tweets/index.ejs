@@ -1,24 +1,28 @@
 <%- include('../partials/html-head') %>
-    <%- include('../partials/nav') %>
 
     <body>
         <div class="container2">
             <div class="content3">
-                <p> <img src="image/owl.png" alt="" width="42" height="42"></p>
+                <p> <img class="logo" src="image/owl.png" alt="" width="42" height="42" ></p>
+                <%- include('../partials/nav') %>
             </div>
             <div class="content4">
-                <input class="textbox" value="tweet" type="text">
-                <h2>Comments</h2>
-                <% if (user) { %>
-                    <h3>Add a comment</h3>
-                    <form action="/tweets/<%= tweets._id %>comments" method="POST">
-                        <textarea name="content"></textarea><br>
-                        <button type="submit">Add Comment</button>
-                    </form>
-                    <% } %>
-
+                    <form action="/tweets" method="POST">
+                      <label>
+                        <input type="text" name="tweet" class="comment" value="What is happening?!" autocomplete="off">
+                      </label>
+                      <label>
+                        <button type="submit" class="postBtn">Post</button>
+                        <ul>
+                          <% tweets.forEach(tweet => { %>
+                            <li>
+                              <%= tweet.tweet %>
+                            </li>
+                          <% }) %>
+                        </ul>
             </div>
             <div class="content5"></div>
         </div>
         
     </body>
+
