@@ -45,31 +45,6 @@ function create(req, res) {
 }
 
 
-
-
-function addComment(req, res) {
-  Tweet.findById(req.params.tweetId)
-  .then(tweet => {
-    req.body.author = req.user.profile._id
-    tweet.comments.push(req.body)
-    tweet.save()
-    .then(()=> {
-      res.render('tweets/index', {
-        tweet,
-        title: 'homepage'
-      })
-    })
-    .catch(err => {
-      console.log(err)
-      res.redirect('/tweets')
-    })
-  })
-  .catch(err => {
-    console.log(err)
-    res.redirect('/tweets')
-  })
-}
-
 function update(req, res) {
   Tweet.findById(req.params.tweetId)
   .then(tweet => {
@@ -120,6 +95,46 @@ function deleteTweet(req, res) {
   })
 }
 
+function addComment(req, res) {
+  Tweet.findById(req.params.tweetId)
+  .then(tweet => {
+    req.body.author = req.user.profile._id
+    tweet.comments.push(req.body)
+    tweet.save()
+    .then(()=> {
+      res.redirect(`/tweets/${tweet._id}`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/tweets')
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/tacos')
+  })
+}
+
+function editComment(req, res) {
+  Tweet.findById(req.params.tweetId)
+  .then(tweet => {
+    const comment = tweet.comments.id(req.params.commentId)
+    if (comment.author.equals(req.user.profile._id)) {
+      res.render('tweets/editComment', {
+        taco, 
+        comment,
+        title: 'Update Comment'
+      })
+    } else {
+      throw new Error('🚫 Not authorized 🚫')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/tweets')
+  })
+}
+
 export {
   index,
   addComment,
@@ -127,5 +142,6 @@ export {
   create,
   update,
   edit,
-  deleteTweet as delete
+  deleteTweet as delete,
+  editComment
 }

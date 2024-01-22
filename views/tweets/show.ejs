@@ -1,0 +1,19 @@
+<%- include('../partials/html-head') %>
+<section>
+    <h2>Comments</h2>
+    <% if (user) { %>
+      <h3>Add a comment</h3>
+      <form action="/tweets/<%= tweet._id %>/comments" method="POST">
+        <textarea name="content"></textarea><br>
+        <button type="submit">Add Comment</button>
+      </form>
+    <% } %>
+    <ul>
+        <% tweet.comments?.forEach(comment => { %>
+          <li>
+            <%= comment.content %> - <%= comment.author.name %>
+          </li> 
+        <% }) %>
+      </ul>
+      
+</section>

@@ -19,6 +19,11 @@ router.put('/:tweetId', isLoggedIn, tweetsCtrl.update)
 router.delete('/:tweetId', isLoggedIn, tweetsCtrl.delete)
 
 
+//POST localhost:3000/tacos/:tacoId/comments
+router.post('/:tweetId/comments', isLoggedIn, tweetsCtrl.addComment)
+//GET localhost:3000/tacos/:tacoId/comments/:commentId/edit
+router.get('/:tweetId/comments/:commentId/edit', isLoggedIn, tweetsCtrl.editComment)
+
 export {
 
   router

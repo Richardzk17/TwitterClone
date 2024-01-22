@@ -21,10 +21,28 @@
                           <% }) %>
                         </ul>
             </div>
-            <div class="content5"></div>
+        <div class="content5">
+
+        <h2>Comments</h2>
+        <% if (user) { %>
+          <h3>Add a comment</h3>
+          <form action="/tweets/<%= tweets._id %>/comments" method="POST">
+            <textarea name="content"></textarea><br>
+            <button type="submit">Add Comment</button>
+          </form>
+        <% } %>
+        <ul>
+            <% taco.comments?.forEach(comment => { %>
+                <li>
+                  <%= comment.content %> - <%= comment.author.name %>
+                  <% if (comment.author.equals(user?.profile._id)) { %>
+                    <a href="/tacos/<%= taco._id %>/comments/<%= comment._id %>/edit">
+                      <button class="btn">Edit Comment</button>
+                    </a>
+                  <% } %> 
+                </li> 
+              <% }) %>
+          </ul>
         </div>
-
-
-        
     </body>
 
