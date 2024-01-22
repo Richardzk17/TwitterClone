@@ -24,6 +24,8 @@ router.get('/:tweetId/comments/:commentId/edit', isLoggedIn, tweetsCtrl.editComm
 router.post('/:tweetId/comments', isLoggedIn, tweetsCtrl.addComment)
 //PUT localhost:3000/tweets/:tweetId/comments/:commentId
 router.put('/:tweetId/comments/:commentId', isLoggedIn, tweetsCtrl.updateComment)
+//DELETE localhost:3000/tweets/:tweetId/comments/:commentId
+router.delete('/:tweetId/comments/:commentId', isLoggedIn, tweetsCtrl.deleteComment)
 
 export {
 

@@ -32,16 +32,23 @@
           </form>
         <% } %>
         <ul>
-            <% taco.comments?.forEach(comment => { %>
-                <li>
-                  <%= comment.content %> - <%= comment.author.name %>
-                  <% if (comment.author.equals(user?.profile._id)) { %>
-                    <a href="/tacos/<%= taco._id %>/comments/<%= comment._id %>/edit">
-                      <button class="btn">Edit Comment</button>
-                    </a>
-                  <% } %> 
-                </li> 
-              <% }) %>
+            <% tweets.comments?.forEach(comment => { %>
+              <li>
+                <%= comment.content %> - <%= comment.author.name %>
+                <% if (comment.author.equals(user?.profile)) { %>
+                  <form 
+                    action="/tweets/<%= tweet._id %>/comments/<%= comment._id %>?_method=DELETE" 
+                    method="POST"
+                    class="inline"
+                  >
+                    <button class="btn" type="submit">Delete Comment</button>
+                  </form>
+                  <a href="/tweets/<%= tweet._id %>/comments/<%= comment._id %>/edit">
+                    <button class="btn">Edit Comment</button>
+                  </a>
+                <% } %> 
+              </li> 
+            <% }) %>
           </ul>
         </div>
     </body>

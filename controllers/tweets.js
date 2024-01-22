@@ -155,7 +155,31 @@ function updateComment(req, res) {
   })
   .catch(err => {
     console.log(err)
-    res.redirect('/tacos')
+    res.redirect('/tweets')
+  })
+}
+
+function deleteComment(req, res) {
+  Tweet.findById(req.params.tweetId)
+  .then(tweet => {
+    const comment = tweet.comments.id(req.params.commentId)
+    if (comment.author.equals(req.user.profile._id)) {
+      tweet.comments.remove(comment)
+      tweet.save()
+      .then(() => {
+        res.redirect(`/tweets/${taco._id}`)
+      })
+      .catch(err => {
+        console.log(err)
+        res.redirect('/tweets')
+      })
+    } else {
+      throw new Error('🚫 Not authorized 🚫')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/tweets')
   })
 }
 
@@ -169,4 +193,5 @@ export {
   deleteTweet as delete,
   editComment,
   updateComment,
+  deleteComment
 }
