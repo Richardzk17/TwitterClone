@@ -3,56 +3,54 @@
     <body>
         <div class="container2">
             <div class="content3">
-                <p> <img class="logo" src="image/owl.png" alt="" width="38" height="38" ></p>
+                <p> <img class="logo" src="image/owl.png" alt="" width="38" height="38"></p>
                 <p style="font-weight: bold;" class="sidebar"><img class="logo1" src="image/Home.png" alt=""> Home</p>
-                <p class="sidebar"><img class="logo1" src="image/magnifying-glass (1).png" alt="">  Explore</p>
-                <p class="sidebar"><img class="logo1" src="image/user.png" alt="">  Profile</p>
+                <p class="sidebar"><img class="logo1" src="image/magnifying-glass (1).png" alt=""> Explore</p>
+                <p class="sidebar"><img class="logo1" src="image/user.png" alt=""> Profile</p>
                 <%- include('../partials/nav') %>
             </div>
             <div class="content4">
-                    <form action="/tweets" method="POST">
-                      <label>
-                        <input type="text" name="name" class="comment" placeholder="What is happening?!" autocomplete="off">
-                      </label>
-                      <label>
-                        <button type="submit" class="postBtn">Post</button>
-                        <ul>
-                          <% tweets.forEach(tweet => { %>
-                            <li>
-                              <%= tweet.name %>
-                            </li>
-                          <% }) %>
-                        </ul>
-            </div>
-        <div class="content5">
+                <section>
+                    <h1>Tacos! 🌮🌮🌮</h1>
+                      <%# New Code Below %>
+                    <% if (user) { %>
+                      <h2>Add a Taco!</h2>
+                      <form action="/tweets" method="POST">
+                        <label>
+                          Name: 
+                          <input type="text" name="name" autocomplete="off">
+                        </label>
+                        <button type="submit">Add 🌮</button>
+                      </form>
+                    <% } %>
+                    <h2>All the Tweets!</h2>
+                    <ul>
+                      <% tweets.forEach(tweet => { %>
+                        <li>
+                          🌮 
+                          <a href="/tweets/<%= tweet._id %>"><%= tweet.name %></a> 
+                        </li>
+                      <% }) %>
+                    </ul>
+                  </section>
+            <div class="content5">
 
-        <h2>Comments</h2>
-        <% if (user) { %>
-          <h3>Add a comment</h3>
-          <form action="/tweets/<%= tweets._id %>/comments" method="POST">
-            <textarea name="content"></textarea><br>
-            <button type="submit">Add Comment</button>
-          </form>
-        <% } %>
-        <ul>
-            <% tweets.comments?.forEach(comment => { %>
-              <li>
-                <%= comment.content %> - <%= comment.author.name %>
-                <% if (comment.author.equals(user?.profile)) { %>
-                  <form 
-                    action="/tweets/<%= tweets._id %>/comments/<%= comment._id %>?_method=DELETE" 
-                    method="POST"
-                    class="inline"
-                  >
-                    <button class="btn" type="submit">Delete Comment</button>
-                  </form>
-                  <a href="/tweets/<%= tweet._id %>/comments/<%= comment._id %>/edit">
-                    <button class="btn">Edit Comment</button>
-                  </a>
-                <% } %> 
-              </li> 
-            <% }) %>
-          </ul>
-        </div>
     </body>
 
+
+
+    <!-- 
+    <form action="/tweets" method="POST">
+        <label>
+          <input type="text" name="name" class="comment" placeholder="What is happening?!" autocomplete="off">
+        </label>
+        <label>
+          <button type="submit" class="postBtn">Post</button>
+          <ul>
+            <% tweets.forEach(tweet => { %>
+              <li>
+                <%= tweet.name %>
+              </li>
+            <% }) %>
+          </ul>
+</div> -->

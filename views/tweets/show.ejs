@@ -1,34 +1,54 @@
 <%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
 <section>
-    <h2>Comments</h2>
-    <% if (user) { %>
-      <h3>Add a comment</h3>
-      <form action="/tweets/<%= tweet._id %>/comments" method="POST">
-        <textarea name="content"></textarea><br>
-        <button type="submit">Add Comment</button>
-      </form>
-    <% } %>
-    <ul>
-        <% tweet.comments?.forEach(comment => { %>
-          <li>
-            <%= comment.content %> - <%= comment.author.name %>
-          </li> 
-        <% }) %>
-      </ul>
-      <form 
-      action="/tweets/<%= tweet._id %>/comments/<%= comment._id %>?_method=PUT"
-      method="POST"
-    >
-      <label>
-        Content: 
-        <textarea
-          cols="30"
-          rows="5" 
-          type="text"
-          name="content" 
-          autocomplete="off"
-        ><%= comment.content %></textarea>
-      </label>
-      <button type="submit">Update Comment</button>
+	<p>From the kitchen of <%= tweet.owner.name %>...</p>
+  <h1><%= tweet.name %> 🌮</h1>
+	<% if (user) { %>
+  
+  <% } %>
+	<% if (tweet.owner.equals(user?.profile._id)) { %>
+    <a href="/tweets/<%= tweet._id %>/edit">
+      <button class="btn">Edit this Taco 🌮🚧</button>
+    </a>
+    <form action="/tweets/<%= tweet._id %>?_method=DELETE" method="POST">
+      <button class="btn" type="submit">Delete this taco 🌮💀</button>
     </form>
+  <% } %>
+  <h2>Comments</h2>
+  <ul>
+    <% tweet.comments?.forEach(comment => { %>
+      <li>
+        <%= comment.content%> 
+        -&nbsp; 
+        <img 
+          class="comment-photo" 
+          src="<%= comment.author.avatar %>" 
+          alt="avatar of commenter"
+        > 
+        <a href="/profiles/<%= comment.author._id %>">
+          <%= comment.author.name %>
+        </a> 
+        &nbsp;at 
+        <%= comment.createdAt.toLocaleString() %>
+        <% if (comment.author.equals(user?.profile._id)) { %>
+          <form action="/tweets/<%= tweet._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+            <button class="btn edit-btn">🗑️</button>
+          </form>
+            <a href="/tweets/<%= tweet._id %>/comments/<%= comment._id %>/edit">
+              <button class="btn edit-btn">📝</button>
+            </a>
+        <% } %> 
+      </li>
+    <% }) %>
+  </ul>
+  <% if (user) { %>
+    <h3>Add a comment</h3>
+    <form action="/tweets/<%= tweet._id %>/comments" method="POST">
+      <textarea name="content"></textarea><br>
+      <button type="submit">Add Comment</button>
+    </form>
+  <% } %>
 </section>
+
+<%- include('../partials/footer') %>

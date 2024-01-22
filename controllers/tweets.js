@@ -21,9 +21,9 @@ function show(req, res) {
     {path: "comments.author"}
   ])
   .then(tweet => {
-    res.render('tweets/index', {
+    res.render('tweets/show', {
       tweet,
-      title: 'homepage'
+      title: 'show'
     })
   })
   .catch(err => {
@@ -59,7 +59,7 @@ function update(req, res) {
   })
   .catch(err => {
     console.log(err)
-    res.redirect("/tacos")
+    res.redirect("/tweets")
   })
 }
 
@@ -111,7 +111,7 @@ function addComment(req, res) {
   })
   .catch(err => {
     console.log(err)
-    res.redirect('/tacos')
+    res.redirect('/tweets')
   })
 }
 
@@ -121,7 +121,7 @@ function editComment(req, res) {
     const comment = tweet.comments.id(req.params.commentId)
     if (comment.author.equals(req.user.profile._id)) {
       res.render('tweets/editComment', {
-        taco, 
+        tweet, 
         comment,
         title: 'Update Comment'
       })
@@ -143,7 +143,7 @@ function updateComment(req, res) {
       comment.set(req.body)
       tweet.save()
       .then(() => {
-        res.redirect(`/tweets/${taco._id}`)
+        res.redirect(`/tweets/${tweet._id}`)
       })
       .catch(err => {
         console.log(err)
@@ -167,7 +167,7 @@ function deleteComment(req, res) {
       tweet.comments.remove(comment)
       tweet.save()
       .then(() => {
-        res.redirect(`/tweets/${taco._id}`)
+        res.redirect(`/tweets/${tweet._id}`)
       })
       .catch(err => {
         console.log(err)
