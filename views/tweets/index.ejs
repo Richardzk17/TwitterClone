@@ -9,20 +9,22 @@
             <div class="content4">
                     <form action="/tweets" method="POST">
                       <label>
-                        <input type="text" name="tweet" class="comment" value="What is happening?!" autocomplete="off">
+                        <input type="text" name="name" class="comment" placeholder="What is happening?!" autocomplete="off">
                       </label>
                       <label>
                         <button type="submit" class="postBtn">Post</button>
                         <ul>
                           <% tweets.forEach(tweet => { %>
                             <li>
-                              <%= tweet.tweet %>
+                              <%= tweet.name %>
                             </li>
                           <% }) %>
                         </ul>
             </div>
             <div class="content5"></div>
         </div>
+
+
         
     </body>
 
