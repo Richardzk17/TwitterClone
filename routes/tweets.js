@@ -18,11 +18,12 @@ router.put('/:tweetId', isLoggedIn, tweetsCtrl.update)
 // DELETE localhost:3000/tweets/:tacoId
 router.delete('/:tweetId', isLoggedIn, tweetsCtrl.delete)
 
-
-//POST localhost:3000/tacos/:tacoId/comments
-router.post('/:tweetId/comments', isLoggedIn, tweetsCtrl.addComment)
 //GET localhost:3000/tacos/:tacoId/comments/:commentId/edit
 router.get('/:tweetId/comments/:commentId/edit', isLoggedIn, tweetsCtrl.editComment)
+//POST localhost:3000/tacos/:tacoId/comments
+router.post('/:tweetId/comments', isLoggedIn, tweetsCtrl.addComment)
+//PUT localhost:3000/tweets/:tweetId/comments/:commentId
+router.put('/:tweetId/comments/:commentId', isLoggedIn, tweetsCtrl.updateComment)
 
 export {
 

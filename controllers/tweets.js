@@ -135,6 +135,30 @@ function editComment(req, res) {
   })
 }
 
+function updateComment(req, res) {
+  Tweet.findById(req.params.tweetId)
+  .then(tweet => {
+    const comment = tweet.comments.id(req.params.commentId)
+    if (comment.author.equals(req.user.profile._id)) {
+      comment.set(req.body)
+      tweet.save()
+      .then(() => {
+        res.redirect(`/tweets/${taco._id}`)
+      })
+      .catch(err => {
+        console.log(err)
+        res.redirect('/tweets')
+      })
+    } else {
+      throw new Error('🚫 Not authorized 🚫')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/tacos')
+  })
+}
+
 export {
   index,
   addComment,
@@ -143,5 +167,6 @@ export {
   update,
   edit,
   deleteTweet as delete,
-  editComment
+  editComment,
+  updateComment,
 }
