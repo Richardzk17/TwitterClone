@@ -27,7 +27,6 @@
               <div class="buttons">
                 <form action="/tweets/<%= tweet._id %>?_method=DELETE" method="POST">
                   <button class="btn" type="submit">Delete</button>
-
                   <a href="/tweets/<%= tweet._id %>/edit">
                     <button class="btn">Edit</button>
                   </a>
@@ -51,10 +50,10 @@
                           <div class="buttons">
                             <form action="/tweets/<%= tweet._id %>/comments/<%= comment._id %>?_method=DELETE"
                               method="POST">
-                              <button class="btn edit-btn">Delete</button>
+                              <button class="edit-btn">Delete</button>
                             </form>
                             <a href="/tweets/<%= tweet._id %>/comments/<%= comment._id %>/edit">
-                              <button class="btn edit-btn">Edit</button>
+                              <button class="edit-btn">Edit</button>
 
                             </a>
                           </div>

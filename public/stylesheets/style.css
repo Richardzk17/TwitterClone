@@ -226,8 +226,16 @@ a {
   display: flex;
   justify-content: end;
   gap: 5px;
-  background: none;
   margin-right: 10px;
-
+ 
 }
 
+
+.edit-btn{
+  background-color: white;
+  border: none;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
