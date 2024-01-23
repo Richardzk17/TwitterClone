@@ -44,9 +44,7 @@
                       &nbsp;at
                       <%= comment.createdAt.toLocaleString() %>
                         <% if (comment.author.equals(user?.profile._id)) { %>
-                          <p>
-                            <%= comment.content%>
-                          </p>
+                          <p><%= comment.content%></p>
                           <div class="buttons">
                             <form action="/tweets/<%= tweet._id %>/comments/<%= comment._id %>?_method=DELETE"
                               method="POST">
@@ -54,7 +52,6 @@
                             </form>
                             <a href="/tweets/<%= tweet._id %>/comments/<%= comment._id %>/edit">
                               <button class="edit-btn">Edit</button>
-
                             </a>
                           </div>
                           <% } %>
@@ -67,9 +64,10 @@
                     <button class="postBtn" type="submit">Post</button>
                   </form>
                   <% } %>
+
       </div>
       <div class="content5"></div>
-
   </section>
+
 
   <%- include('../partials/footer') %>
