@@ -11,29 +11,24 @@
             </div>
             <div class="content4">
                 <section>
-                    <h1>Tacos! 🌮🌮🌮</h1>
-                      <%# New Code Below %>
                     <% if (user) { %>
-                      <h2>Add a Taco!</h2>
                       <form action="/tweets" method="POST">
                         <label>
-                          Name: 
-                          <input type="text" name="name" autocomplete="off">
+                          <input type="text" class="comment" name="name" autocomplete="off" placeholder="What is happening?!">
                         </label>
-                        <button type="submit">Add 🌮</button>
+                        <button class="postBtn" type="submit">Post</button>
                       </form>
                     <% } %>
-                    <h2>All the Tweets!</h2>
                     <ul>
                       <% tweets.forEach(tweet => { %>
                         <li>
-                          🌮 
-                          <a href="/tweets/<%= tweet._id %>"><%= tweet.name %></a> 
+                          <p class="time"><img  src="image/user (1).png" alt=""><%= tweet.createdAt.toLocaleString() %></p><a href="/tweets/<%= tweet._id %>"><%= tweet.name %></a> 
                         </li>
                       <% }) %>
                     </ul>
                   </section>
-            <div class="content5">
+                </div>
+            <div class="content5"></div>
 
     </body>
 
