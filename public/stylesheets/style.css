@@ -44,8 +44,6 @@ body {
 
 }
 
-
-
 .container {
   display: flex;
 }
@@ -60,8 +58,6 @@ body {
   background-position: center center;
   background-size: 60%;
   color: white;
-
-
 }
 
 .content2 {
@@ -109,8 +105,6 @@ body {
   border: .5px solid lightgray;
   border-top: none;
   color: black;
-
-
 }
 
 .content5 {
@@ -201,7 +195,6 @@ li:hover {
   margin-left: 5px;
 }
 
-
 .sidebar {
    margin-left: 60px ;
    padding: 5px;
@@ -215,3 +208,26 @@ li:hover {
   width: 150px;
   border-radius: 16px;
 }
+
+a {
+  color: inherit; 
+  text-decoration: inherit;
+}
+
+.comment-photo{
+  height: 36px;
+  width: 36px;
+  margin-top: 4px;
+  margin-right: 4px;
+  border-radius: 50%;
+}
+
+.buttons{
+  display: flex;
+  justify-content: end;
+  gap: 5px;
+  background: none;
+  margin-right: 10px;
+
+}
+
