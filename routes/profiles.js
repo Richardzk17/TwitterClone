@@ -6,7 +6,7 @@ const router = Router()
 // GET http://localhost:3000/profiles
 router.get('/', isLoggedIn, profilesCtrl.index)
 // GET http://localhost:3000/profiles/:profileId
-router.get('/:profileId', isLoggedIn, profilesCtrl.show)
+// router.get('/:profileId', isLoggedIn, profilesCtrl.show)
 
 
 export {
