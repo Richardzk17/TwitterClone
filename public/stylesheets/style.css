@@ -14,11 +14,11 @@ html {
 }
 
 body {
-  background-color: black;
+  background-color:white;
   color: #f6f6f6;
   /* Use a system font, if none are available use any found sans-sarif font */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
+  height: 100vh;
   margin: 0;
 }
 
@@ -63,7 +63,7 @@ body {
 .content2 {
   background-color: white;
   width: 50%;
-  height: 100vh;
+  height: 100%;
   color: black;
 }
 
@@ -101,10 +101,11 @@ body {
 .content4 {
   background-color: white;
   width: 53%;
-  height: 100vh;
+  height: 100%;
   border: .5px solid lightgray;
   border-top: none;
   color: black;
+  overflow: auto;
 }
 
 .content5 {
