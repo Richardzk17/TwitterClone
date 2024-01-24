@@ -23,7 +23,7 @@ import { router as indexRouter } from './routes/index.js'
 import { router as authRouter } from './routes/auth.js'
 import { router as tweetsRouter } from './routes/tweets.js'
 import { router as profilesRouter } from './routes/profiles.js'
-import { router as newsapissRouter } from './routes/newsapis.js'
+import { router as newsRouter } from './routes/news.js'
 
 
 // create the express app
@@ -68,7 +68,7 @@ app.use('/', indexRouter)
 app.use('/auth', authRouter)
 app.use('/tweets', tweetsRouter)
 app.use('/profiles', profilesRouter)
-app.use('/newsapis', newsapissRouter)
+app.use('/news', newsRouter)
 
 
 // catch 404 and forward to error handler
@@ -90,6 +90,13 @@ app.use(function (err, req, res, next) {
     googleClientID: process.env.GOOGLE_CLIENT_ID,
   })
 })
+
+
+
+
+app.use(express.json());
+
+
 
 export { 
   app 

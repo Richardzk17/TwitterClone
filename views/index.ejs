@@ -1,5 +1,5 @@
 <%- include('./partials/html-head') %>
-<!-- <%- include('./partials/nav') %> -->
+
 
 <body>
   <div class="container">
@@ -39,9 +39,8 @@
           ></div>
         <% } %>
       </div>
-  </div>
+  
   <main>
-    <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
     <% if (user?.profile.avatar) { %>
       <div>
         <img
@@ -53,10 +52,7 @@
   </main>  <% if (!user) { %>
     <script defer src="https://accounts.google.com/gsi/client"></script>
   <% } %>
-  </head>
-  <body>
-  
+</div>
 </body>
 
 
-<!-- <%- include('./partials/footer') %> -->

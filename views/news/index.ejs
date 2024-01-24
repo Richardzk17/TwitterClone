@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore</title>
+</head>
+
+<body>
+    <form action="/news" method="POST">
+        <input type="text" name="content">
+        <button type="submit">News</button>
+    </form>
+
+
+    <script>
+        var url = 'https://newsapi.org/v2/everything?' +
+            'q=Apple&' +
+            'from=2023-23-24&' +
+            'sortBy=popularity&' +
+            `apiKey=4d07895234f34f379ed73973ca14e879`;
+
+        var req = new Request(url);
+
+        fetch(req)
+            .then(function (response) {
+                console.log(response.json());
+            })
+    </script>
+</body>
+
+</html>

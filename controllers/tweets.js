@@ -183,6 +183,8 @@ function deleteComment(req, res) {
   })
 }
 
+
+
 export {
   index,
   addComment,
@@ -193,5 +195,6 @@ export {
   deleteTweet as delete,
   editComment,
   updateComment,
-  deleteComment
+  deleteComment,
+  
 }
