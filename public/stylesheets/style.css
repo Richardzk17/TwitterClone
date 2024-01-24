@@ -157,10 +157,11 @@ li:hover {
   border-bottom: none;
   font-size: large;
   margin-top: 60px;
-
+  outline: none;
+  padding-bottom: 60px;
 }
 
-.postBtn {
+.postBtn, .searchBtn {
   background-color: #54b7f4;
   border: none;
   color: white;
@@ -170,7 +171,10 @@ li:hover {
   font-size: 16px;
   margin-left: 85%;
   margin-bottom: 10px;
+}
 
+.searchBtn {
+  margin-top: 30px;
 }
 
 .logoutBtn {
@@ -190,8 +194,8 @@ li:hover {
 }
 
 .logo1{
-  height: 20px;
-  width: 20px;
+  height: 24px;
+  width: 24px;
   margin-right: 10px;
   margin-left: 5px;
 }
@@ -206,7 +210,7 @@ li:hover {
   background-color: rgba(220, 220, 220, 0.9);
   border: none;
   height: 36px;
-  width: 150px;
+  width: 180px;
   border-radius: 16px;
 }
 
@@ -252,4 +256,51 @@ a {
   color: rgb(133, 130, 130);
   text-align: center;
 
+}
+
+
+.profile_header{
+  background-color: rgb(200, 212, 212);
+  /* background-image: url("https://i.pinimg.com/736x/82/4c/75/824c75d5d8baddac1e3ab99a48b77f36.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; */
+  width: 100vh;
+  height: 240px;
+}
+
+.profile_avatar {
+  height: 140px;
+  width: 140px;
+  border-radius: 50%;
+  border: solid 4px white;
+  margin-top: 170px;
+  margin-left: 20px;
+}
+
+.profile_name{
+  margin-left: 20px;
+  font-size: 22px;
+  font-weight: bolder;
+}
+
+.header_container {
+border-bottom: .2px solid lightgray;
+height: 400px;
+}
+
+.user_img{
+  height: 42px;
+  width: 42px;
+  margin-right: 5px;
+}
+
+.time_home{
+  margin-left: 500px;
+  margin-top: 40px;
+  color: rgb(63, 63, 63);
+}
+
+.tweet_text{
+  padding: 10px 10px 10px 25px;
+  margin-right: 10px;
 }

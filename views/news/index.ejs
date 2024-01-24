@@ -4,30 +4,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+
     <title>Explore</title>
 </head>
 
 <body>
+    <div class="container2">
+
+    <%- include('../partials/sidebar') %>
+
+    <div class="content4">
+
     <form action="/news" method="POST">
-        <input type="text" name="content">
-        <button type="submit">News</button>
+        <input class="textbox" type="text" placeholder="Search" name="content">
+        <br><button class="searchBtn" type="submit">Search</button>
     </form>
+    </div>
 
-
-    <script>
-        var url = 'https://newsapi.org/v2/everything?' +
-            'q=Apple&' +
-            'from=2023-23-24&' +
-            'sortBy=popularity&' +
-            `apiKey=4d07895234f34f379ed73973ca14e879`;
-
-        var req = new Request(url);
-
-        fetch(req)
-            .then(function (response) {
-                console.log(response.json());
-            })
-    </script>
+              <div class="content5"></div>
+</div>
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <script>
+    let url = 'https://newsapi.org/v2/everything?' +
+        'q=Apple&' +
+        'from=2023-23-24&' +
+        'sortBy=popularity&' +
+        `apiKey=4d07895234f34f379ed73973ca14e879`;
+
+    let req = new Request(url);
+
+    fetch(req)
+        .then(function (response) {
+            console.log(response.json());
+        })
+</script> -->

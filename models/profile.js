@@ -2,18 +2,20 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 
-const tweetSchema = new Schema({
-  owner: {type: Schema.Types.ObjectId, ref: 'Profile'},
-  date: Date,
-  tweet: String
+
+const commentSchema = new Schema({
+  content: String,
+  avatar: String,
+  author: { type: Schema.Types.ObjectId, ref: 'Profile'}
 }, {
-timestamps: true,
+  timestamps: true
 })
+
 
 const profileSchema = new Schema({
   name: String,
   avatar: String,
-  tweet:[tweetSchema]
+  comments: [commentSchema]
 }, {
   timestamps: true
 })

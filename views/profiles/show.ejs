@@ -1,16 +1,25 @@
 <%- include('../partials/html-head') %>
-<link rel="stylesheet" href="/stylesheets/profiles/index.css">
+    <link rel="stylesheet" href="/stylesheets/profiles/index.css">
 
 
-<%- include('../partials/html-head') %>
+    <%- include('../partials/html-head') %>
 
-    <body>
-        <div class="container2">
-            <%- include('../partials/sidebar') %>
-            <div class="content4">
-                </div>
-            <div class="content5"></div>
+        <body>
+            <div class="container2">
+                <%- include('../partials/sidebar') %>
+                    <div class="content4">
+                        <div class="header_container">
+                            <div class="profile_header">
+                                <img class="profile_avatar" src="<%= profile.avatar %>"
+                                    alt="<%= profile.name %>'s avatar">
+                                <p class="profile_name">
+                                    <%= profile.name %>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content5">
+                        
+                    </div>
 
-    </body>
-
-
+        </body>

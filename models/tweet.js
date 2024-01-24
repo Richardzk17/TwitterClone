@@ -13,6 +13,7 @@ const tweetSchema = new Schema({
     owner: {type: Schema.Types.ObjectId, ref: 'Profile'},
     date: Date,
     name: String,
+    avatar: String,
     comments: [commentSchema]
 }, {
   timestamps: true,
