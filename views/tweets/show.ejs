@@ -1,18 +1,22 @@
 <%- include('../partials/html-head') %>
 
-
   <section>
     <div class="container2">
       <%- include('../partials/sidebar') %>
       <div class="content4">
         <div class="comment">
-          <p>
-            <%= tweet.owner.name %>
-          </p>
-          <h1>
-            <%= tweet.name %>
-          </h1>
+          <div class="user_header">
+          <img class="user_img" src="/image/user (1).png" alt="">
+          <p class="tweet_owner"><%= tweet.owner.name %></p>
+          </div>
+            <p class="tweet"><%= tweet.name %></p>
         </div>
+        <% if (user) { %>
+          <form action="/tweets/<%= tweet._id %>/comments" method="POST">
+            <textarea class="commentBox" placeholder="Post your reply" name="content"></textarea><br>
+            <button class="postBtn" type="submit">Reply</button>
+          </form>
+          <% } %>
         <% if (user) { %>
 
           <% } %>
@@ -23,6 +27,7 @@
                   <a href="/tweets/<%= tweet._id %>/edit">
                     <button class="btn">Edit</button>
                   </a>
+                  
                 </form>
               </div>
               <% } %>
@@ -35,7 +40,7 @@
                         <%= comment.author.name %>
                       </a>
                       &nbsp;at
-                      <%= comment.createdAt.toLocaleString() %>
+                      <span class="time_home"><%= comment.createdAt.toLocaleString() %></span>
                         <% if (comment.author.equals(user?.profile._id)) { %>
                           <p><%= comment.content%></p>
                           <div class="buttons">
@@ -51,12 +56,7 @@
                     </li>
                     <% }) %>
                 </ul>
-                <% if (user) { %>
-                  <form action="/tweets/<%= tweet._id %>/comments" method="POST">
-                    <textarea class="" name="content"></textarea><br>
-                    <button class="postBtn" type="submit">Post</button>
-                  </form>
-                  <% } %>
+
 
       </div>
       <div class="content5"></div>

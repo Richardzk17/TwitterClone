@@ -17,9 +17,29 @@
                                 </p>
                             </div>
                         </div>
+                        <section>
+                            <% if (user) { %>
+                              <form action="/tweets" method="POST">
+                                <label>
+                                  <input type="text" class="comment" name="name" autocomplete="off" placeholder="What is happening?!">
+                                </label>
+                                <button class="postBtn" type="submit">Post</button>
+                              </form>
+                              <% } %>
+                                <ul>
+                                  <% tweets.forEach(tweet=> { %>
+                                    <a href="/tweets/<%= tweet._id %>"><li>
+                                      <p><img class="user_img" src="/image/user (1).png" alt=""><span class="time_home"><%= tweet.createdAt.toLocaleString() %></span></p>
+                                      <p class="tweet_text"><%= tweet.name %></p>
+                                    </li></a>
+                                    <% }) %>
+                                </ul>
+                          </section>
                     </div>
+                    
                     <div class="content5">
                         
+                          
                     </div>
 
         </body>

@@ -16,31 +16,18 @@
             <% } %>
               <ul>
                 <% tweets.forEach(tweet=> { %>
+                  <%= tweet.owner.name %>
+
                   <a href="/tweets/<%= tweet._id %>"><li>
                     <p><img class="user_img" src="image/user (1).png" alt=""><span class="time_home"><%= tweet.createdAt.toLocaleString() %></span></p>
-                    <p class="tweet_text"><%= tweet.name %></p>
-                  </li></a>
+                    <p class="tweet_text"><%= tweet.name %></p></a>
+                  </li>
                   <% }) %>
               </ul>
         </section>
       </div>
       <div class="content5">
     
-        <!-- <script>
-          console.log('hello')
-          var url = 'https://newsapi.org/v2/everything?' +
-            'q=Apple&' +
-            'from=2024-01-22&' +
-            'sortBy=popularity&' +
-            'apiKey=4d07895234f34f379ed73973ca14e879';
-
-          var req = new Request(url);
-
-          fetch(req)
-            .then(function (response) {
-              console.log(response.json());
-            })
-        </script> -->
 
 
 
