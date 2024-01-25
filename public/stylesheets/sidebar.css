@@ -42,3 +42,43 @@ button {
     color: white;
     font-size: 18px;
 }
+
+.section2 {
+    width: 360px;
+    height: 450px;
+    border-radius: 20px;
+    border: none;
+    background-color: #F5F8FA;
+    color: rgb(0, 0, 0);
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+.sub2{
+    margin-left: 10px;
+    position: relative;
+
+}
+
+.trending {
+    font-size: 14px;
+    color: #858282;
+    margin-top: 20px;
+}
+
+.hurricanes {
+    height: 100px;
+    width: 100px;
+    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 25px;
+}
+
+.sub2:hover{
+    background-color: #f0f0f0;
+    margin-left: 0;
+    padding: 1px;
+}
+
