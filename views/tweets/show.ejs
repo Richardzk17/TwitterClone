@@ -6,10 +6,10 @@
       <div class="content4">
         <div class="comment">
           <div class="user_header">
-          <img class="user_img" src="/image/user (1).png" alt="">
-          <p class="tweet_owner"><%= tweet.owner.name %></p>
+            <img class="user_img" src="<%= tweet.owner.avatar %>" alt="Profile Picture">
+            <p class="tweet_owner"><%= tweet.owner.name %></p>
           </div>
-            <p class="tweet"><%= tweet.name %></p>
+          <p class="tweet"><%= tweet.name %></p>
         </div>
         <% if (user) { %>
           <form action="/tweets/<%= tweet._id %>/comments" method="POST">
@@ -39,10 +39,11 @@
                       <a href="/profiles/<%= comment.author._id %>">
                         <%= comment.author.name %>
                       </a>
-                      &nbsp;at
+                      &nbsp; 
+                      <p><%= comment.content%> </p> 
+                     
                       <span class="time_home"><%= comment.createdAt.toLocaleString() %></span>
                         <% if (comment.author.equals(user?.profile._id)) { %>
-                          <p><%= comment.content%></p>
                           <div class="buttons">
                             <form action="/tweets/<%= tweet._id %>/comments/<%= comment._id %>?_method=DELETE"
                               method="POST">
@@ -59,8 +60,10 @@
 
 
       </div>
-      <div class="content5"></div>
+      <%- include('../partials/rightside') %>
+
   </section>
 
 
   <%- include('../partials/footer') %>
+
