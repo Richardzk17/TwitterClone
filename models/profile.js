@@ -15,6 +15,7 @@ const commentSchema = new Schema({
 const profileSchema = new Schema({
   name: String,
   avatar: String,
+  image: String,
   comments: [commentSchema]
 }, {
   timestamps: true
