@@ -13,12 +13,12 @@
               <div class="card-container">
                 <% profiles.forEach(profile=> { %>
                   <a class="text-decoration-none" href="/profiles/<%= profile._id %>">
-                    <div class="card">
-                      <img src="<%= profile.avatar %>" alt="<%= profile.name %>'s avatar">
+                    <div  style="border-bottom: 1px solid lightgray;" class="card">
+                      <img style="border-radius: 50%; margin: 25px 15px 15px 10px;" src="<%= profile.avatar %>" alt="<%= profile.name %>'s avatar">
                       <div class="card-body">
-                        <h1 class="card-title">
+                        <h3 style="margin-left: 10px; " class="card-title">
                           <%= profile.name %>
-                        </h1>
+                        </h3>
                       </div>
                     </div>
                   </a>
