@@ -18,7 +18,6 @@
           </form>
           <% } %>
         <% if (user) { %>
-
           <% } %>
             <% if (tweet.owner.equals(user?.profile._id)) { %>
               <div class="buttons">
@@ -29,20 +28,21 @@
                   </a>
                   
                 </form>
-              </div>
+                </div>
               <% } %>
                 <ul>
                   <% tweet.comments?.forEach(comment=> { %>
                     <li>
                       &nbsp;
-                      <img class="comment-photo" src="<%= comment.author.avatar %>" alt="avatar of commenter">
+                      <p class="tweet_comment"><img class="comment-photo" src="<%= comment.author.avatar %>" alt="avatar of commenter">
                       <a href="/profiles/<%= comment.author._id %>">
                         <%= comment.author.name %>
+                        <span class="time"><%= comment.createdAt.toLocaleString() %></span></p>
+
                       </a>
                       &nbsp; 
                       <p><%= comment.content%> </p> 
                      
-                      <span class="time_home"><%= comment.createdAt.toLocaleString() %></span>
                         <% if (comment.author.equals(user?.profile._id)) { %>
                           <div class="buttons">
                             <form action="/tweets/<%= tweet._id %>/comments/<%= comment._id %>?_method=DELETE"

@@ -1,45 +1,48 @@
 <%- include('../partials/html-head') %>
-    <link rel="stylesheet" href="/stylesheets/profiles/index.css">
+  <link rel="stylesheet" href="/stylesheets/profiles/index.css">
 
 
-    <%- include('../partials/html-head') %>
+  <%- include('../partials/html-head') %>
 
-        <body>
-            <div class="container2">
-                <%- include('../partials/sidebar') %>
-                    <div class="content4">
-                        <div class="header_container">
-                            <div class="profile_header">
-                                <img class="profile_avatar" src="<%= profile.avatar %>"
-                                    alt="<%= profile.name %>'s avatar">
-                                <p class="profile_name">
-                                    <%= profile.name %>
-                                </p>
-                            </div>
-                        </div>
-                        <section>
-                            <% if (user) { %>
-                              <form action="/tweets" method="POST">
-                                <label>
-                                  <input type="text" class="comment" name="name" autocomplete="off" placeholder="What is happening?!">
-                                </label>
-                                <button class="postBtn" type="submit">Post</button>
-                              </form>
-                              <% } %>
-                                <ul>
-                                  <% tweets.forEach(tweet=> { %>
-                                    <a href="/tweets/<%= tweet._id %>"><li>
-                                      <p><img class="user_img" src="/image/user (1).png" alt=""><span class="time_home"><%= tweet.createdAt.toLocaleString() %></span></p>
-                                      <p class="tweet_text"><%= tweet.name %></p>
-                                    </li></a>
-                                    <% }) %>
-                                </ul>
-                          </section>
-                    </div>
-                    
-                    <%- include('../partials/rightside') %>
-                      
-                  
-                    </div>
+    <body>
+      <div class="container2">
+        <%- include('../partials/sidebar') %>
+          <div class="content4">
+            <div class="header_container">
+              <div class="profile_header">
+                <img class="profile_avatar" src="<%= profile.avatar %>" alt="<%= profile.name %>'s avatar">
+                <p class="profile_name">
+                  <%= profile.name %>
+                </p>
+              </div>
+            </div>
+            <section>
+              <% if (user) { %>
+                <form action="/tweets" method="POST" class="formInput">
+                  <input type="text" class="comment" name="name" autocomplete="off" placeholder="What is happening?!">
+                  <button class="postBtn" type="submit">Post</button>
+                </form>
+                <% } %>
+                  <ul>
+                    <% tweets.forEach(tweet=> { %>
+                      <a href="/tweets/<%= tweet._id %>">
+                        <li>
+                          <p><img class="user_img" src="/image/user (1).png" alt=""><span class="time_home">
+                              <%= tweet.createdAt.toLocaleString() %>
+                            </span></p>
+                          <p class="tweet_text">
+                            <%= tweet.name %>
+                          </p>
+                        </li>
+                      </a>
+                      <% }) %>
+                  </ul>
+            </section>
+          </div>
 
-        </body>
+          <%- include('../partials/rightside') %>
+
+
+      </div>
+
+    </body>

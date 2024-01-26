@@ -4,30 +4,33 @@
     <div class="container2">
       <%- include('../partials/sidebar') %>
 
-      <div class="content4">
-        <section>
-          <% if (user) { %>
-            <form action="/tweets" method="POST">
-              <label>
+        <div class="content4">
+          <section class="sectionPost">
+            <% if (user) { %>
+              <form action="/tweets" method="POST" class="formInput">
                 <input type="text" class="comment" name="name" autocomplete="off" placeholder="What is happening?!">
-              </label>
-              <button class="postBtn" type="submit">Post</button>
-            </form>
+                <button class="postBtn" type="submit">Post</button>
+              </form>
 
-            <% } %>
-              <ul>
-                <% tweets.forEach(tweet=> { %>
-                  <%= tweet.owner.name %>
+              <% } %>
+                <ul>
+                  <% tweets.forEach(tweet=> { %>
+                    <%= tweet.owner.name %>
 
-                  <a href="/tweets/<%= tweet._id %>"><li>
-                    <p><img class="user_img" src="image/user (1).png" alt=""><span class="time_home"><%= tweet.createdAt.toLocaleString() %></span></p>
-                    <p class="tweet_text"><%= tweet.name %></p></a>
-                  </li>
-                  <% }) %>
-              </ul>
-        </section>
-      </div>
-      <%- include('../partials/rightside') %>
+                      <a href="/tweets/<%= tweet._id %>">
+                        <li>
+                          <p><img class="user_img" src="image/profile-avatar.png" alt=""><span class="time_home">
+                              <%= tweet.createdAt.toLocaleString() %></span></p>
+                          <p class="tweet_text">
+                            <%= tweet.name %>
+                          </p>
+                      </a>
+                      </li>
+                      <% }) %>
+                </ul>
+          </section>
+        </div>
+        <%- include('../partials/rightside') %>
 
 
   </body>

@@ -5,6 +5,7 @@ const Schema = mongoose.Schema
 const userSchema = new Schema({
   email: String,
   googleId: String,
+  avatar: String,
   profile: { type: Schema.Types.ObjectId, ref: 'Profile' },
 }, {
   timestamps: true,
