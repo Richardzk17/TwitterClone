@@ -1,8 +1,10 @@
-# Twitter Clone 🎰
+# Twitter Clone 
 
-<img width="1440" alt="BlackJack" src="/public/image/Screenshot 2024-01-26 at 9.58.43 AM (2).png">
-<img width="1440" alt="SlotMachine" src="/public/image/Screenshot 2024-01-26 at 9.58.51 AM (2).png">
+# <img width="1440" alt="BlackJack" src="/public/image/Screenshot 2024-01-26 at 9.58.43 AM (2).png">
+#  <img width="1440" alt="SlotMachine" src="/public/image/Screenshot 2024-01-26 at 9.58.51 AM (2).png">
 
+
+Developed a Twitter clone using Node.js and MongoDB, implementing CRUD operations. Created a scalable platform with user authentication, real-time updates, and data storage. Achieved a functional and responsive application resembling Twitter's core features. Integrated user-friendly interface with CRUD functionality in a Twitter replica, ensuring seamless communication. Leveraged Node.js, MongoDB for data management, and real-time updates for enhanced user experience.
 
 
 [**Link To Site**](https://twitterclone.fly.dev/)
