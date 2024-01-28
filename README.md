@@ -4,10 +4,9 @@
 # <img width="1440" alt="SlotMachine" src="/public/image/Screenshot 2024-01-26 at 9.58.51 AM (2).png">
 
 
-Developed a Twitter clone using Node.js and MongoDB, implementing CRUD operations. Created a scalable platform with user authentication, real-time updates, and data storage. Achieved a functional and responsive application resembling Twitter's core features. Integrated user-friendly interface with CRUD functionality in a Twitter replica, ensuring seamless communication. Leveraged Node.js, MongoDB for data management, and real-time updates for enhanced user experience.
+Excited to unveil my Twitter replica—an engaging platform for insightful conversations. Join a community that values meaningful discourse. Share your thoughts, engage with others, and let's build a space where every voice contributes to thoughtful discussions.
 
-
-[**Link To Site**](https://twitterclone.fly.dev/)
+## [**Link To Site**](https://twitterclone.fly.dev/)
 
 ## Technologies Used 👨‍💻
 
@@ -18,6 +17,11 @@ Developed a Twitter clone using Node.js and MongoDB, implementing CRUD operation
 * ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 * ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 * ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
+* ![Nodemon](https://img.shields.io/badge/NODEMON-%23323330.svg?style=for-the-badge&logo=nodemon&logoColor=%BBDEAD)
+* ![Trello](https://img.shields.io/badge/Trello-%23026AA7.svg?style=for-the-badge&logo=Trello&logoColor=white)
+* ![Mongoose](https://img.shields.io/badge/Mongoose-880000.svg?style=for-the-badge&logo=Mongoose&logoColor=white)
+* Google OAuth
+* Passport.JS
 
 
 ## Credit 
