@@ -68,7 +68,7 @@ function edit(req, res) {
   .then(tweet => {
     res.render('tweets/edit', {
       tweet,
-      title: "edit 🌮"
+      title: 'Edit Comment'
     })
   })
   .catch(err => {

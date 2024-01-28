@@ -4,25 +4,24 @@
   <%- include('../partials/sidebar') %>
   <div class="content4">
 
-<section>
-  <h1 class="editComment">Edit your comment!</h1>
-  <form 
-    action="/tweets/<%= tweet._id %>/comments/<%= comment._id %>?_method=PUT"
-    method="POST"
-  >
-    <label>
-      <textarea placeholder="Edit your comment" class="comment"
-        cols="30"
-        rows="5" 
-        type="text"
-        name="content" 
-        autocomplete="off"
-      ><%= comment.content %></textarea>
-    </label>
-    <button class="updateBtn" type="submit">Update Comment</button>
-  </form>
+    <section>
+        <h1 class="editComment">Edit your Tweet!</h1>
 
+  <form action="/tweets/<%= tweet._id %>?_method=PUT" method="POST">
+    <label>
+      <input placeholder="Edit your tweet" class="comment"
+        type="text"
+        name="name" 
+        value="<%= tweet.name %>" 
+        autocomplete="off"
+      >
+    </label>
+
+    <button class="updateBtn" type="submit">Edit </button>
+  </form>
 </section>
+
+      
 </div>
 
 <%- include('../partials/rightside') %>
