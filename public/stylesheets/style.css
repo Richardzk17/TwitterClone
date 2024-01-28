@@ -244,9 +244,9 @@ a {
 
 .profile_header {
   background-color: rgb(200, 212, 212);
-  /* background-image: url("https://i.pinimg.com/736x/82/4c/75/824c75d5d8baddac1e3ab99a48b77f36.jpg");
+  background-image: url("https://i.pinimg.com/736x/82/4c/75/824c75d5d8baddac1e3ab99a48b77f36.jpg");
   background-repeat: no-repeat;
-  background-size: cover; */
+  background-size: cover;
   width: 100vh;
   height: 240px;
 }
