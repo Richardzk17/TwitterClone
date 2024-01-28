@@ -300,6 +300,21 @@ a {
   border-radius: 25px;
 }
 
+.editComment {
+  padding: 10px;
+}
+
+.updateBtn {
+    border: none;
+    background-color: black;
+    color: white;
+    height: 28px;
+    width: 140px;
+    border-radius: 25px;
+    margin: 10px 10px;
+
+}
+
 .sectionPost {
   margin-bottom: 60px;
 }
@@ -308,9 +323,6 @@ a {
   padding: 12px;
   border: 1px solid lightgray;
   width: 100%;
-  border-left: none;
-  border-right: none;
-  border-bottom: none;
   font-size: 14px;
   margin-top: 60px;
   outline: none;
