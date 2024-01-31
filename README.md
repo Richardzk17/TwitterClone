@@ -1,7 +1,7 @@
 # Twitter Clone 
 
-# <img width="1440" alt="BlackJack" src="/public/image/Screenshot 2024-01-26 at 9.58.43 AM (2).png">
-# <img width="1440" alt="SlotMachine" src="/public/image/Screenshot 2024-01-26 at 9.58.51 AM (2).png">
+# <img width="1440" alt="BlackJack" src="/public/image/Screenshot 2024-01-30 at 7.10.53 PM.png">
+# <img width="1440" alt="SlotMachine" src="/public/image/Screenshot 2024-01-30 at 7.11.09 PM.png">
 
 
 Excited to unveil my Twitter replica—an engaging platform for insightful conversations. Join a community that values meaningful discourse. Share your thoughts, engage with others, and let's build a space where every voice contributes to thoughtful discussions.

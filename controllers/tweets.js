@@ -1,7 +1,11 @@
 import { Tweet } from "../models/tweet.js"
 
 function index(req, res) {
-  Tweet.find({})
+  Tweet.find(req.params.tweetId)
+  .populate([
+    {path: "owner"},
+    {path: "comments.author"}
+  ])
   .then(tweets => {
     res.render('tweets/index', {
       tweets,
